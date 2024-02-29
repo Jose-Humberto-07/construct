@@ -1,0 +1,22 @@
+gerente:
+- cadastrar produtos
+- liberar desconto
+- estornar a venda
+- cadastrar cliente
+- emitir relatórios
+- realizar orçamento
+- criar etiqueta do produto
+- liberar crédito
+- aceitar devolução
+vendedor:
+- cadastrar cliente
+- realizar venda
+- consultar estoque
+- sinalizar para o gerente
+- ver comissões
+- realizar um orçamento
+caixa:
+- abrir caixa
+- fechar caixa
+- finalizar compra
+- fluxo de caixa
