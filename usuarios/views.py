@@ -1,10 +1,26 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from rolepermissions.decorators import has_permission_decorator
+from .models import Users
 
 # Create your views here.
 
 
 @has_permission_decorator('cadastrar_vendedor')
 def cadastrar_vendedor(request):
-    return render(request, 'cadastrar_vendedor.html')
+    if request.method == "GET":
+        return render(request, 'cadastrar_vendedor.html')
+    if request.method == "POST":
+        email = request.POST.get('email')
+        senha = request.POST.get('senha')
+
+        user = Users.objects.filter(email=email)
+
+        if user.exists():
+            #fazer: utilizar messages do django
+
+            return HttpResponse('Email ja existente, por favor tente novamente')
+
+        user = Users.objects.create_user(username=email, email=email, password=senha, cargo="V")
+        #fazer: redirecionar com mensagem no template html 
+        return HttpResponse("conta criada com sucesso")

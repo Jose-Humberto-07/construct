@@ -3,10 +3,15 @@
 {% block 'body' %}
 
     <div class="container">
-        <form action="" method="POST">
+        <form action="{% url 'cadastrar_vendedor' %}" method="POST">{% csrf_token %}
             <br>
             <label for="">E-mail</label>
             <input type="email" placeholder="Digite seu E-mail" name="email" class="form-control" >
+            <br>
+            <label for="">Senha</label>
+            <input type="password" placeholder="Digite sua Senha" name="Senha" class="form-control" >
+            <br>
+            <input type="submit" class="btn btn-success">
 
 
         </form>
