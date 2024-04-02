@@ -3,6 +3,12 @@
 {% block 'body' %}
 
     <div class="container">
+        {% if messages %}
+        <br>
+        {% for message in messages%}
+            <div class="alert {{message.tags}}">{{message}}</div>
+        {% endfor%}
+        {% endif %}
         <form action="{% url 'cadastrar_vendedor' %}" method="POST">{% csrf_token %}
             <br>
             <label for="">E-mail</label>
