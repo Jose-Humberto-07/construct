@@ -1,0 +1,38 @@
+<form action="{% url 'add_produto' %}" method="POST" enctype="multipart/form-data">
+
+<label>Images:</label>
+<input type="file" name="imagens" multiple>
+<br>
+<br>
+
+<label>Nome:</label>
+<input type="text" name="nome">
+
+<br>
+<br>
+
+<label>Selecione a categoria do produto</label>
+<select name="categoria">
+
+    {% for categoria in categorias %}
+
+        <option value="{{categoria.id}}">{{categoria.titulo}}</option>
+
+    {% endfor %}
+    
+
+</select>
+
+<br>
+<br>
+
+<label>Nome:</label>
+<input type="text" name="nome">
+
+<br>
+<br>
+
+<label>Nome:</label>
+<input type="text" name="nome">
+
+</form>

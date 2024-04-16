@@ -11,11 +11,17 @@
         {% endif %}
         <form action="{% url 'cadastrar_vendedor' %}" method="POST">{% csrf_token %}
             <br>
+            <label>Nome:</label>
+            <input type="text" placeholder="Nome" name="nome" class="form-control">
+            <br>
+            <label>Sobrenome:</label>
+            <input type="text" placeholder="Sobre Nome" name="sobrenome" class="form-control">
+            <br>
             <label for="">E-mail</label>
-            <input type="email" placeholder="Digite seu E-mail" name="email" class="form-control" >
+            <input type="email" placeholder="E-mail" name="email" class="form-control" >
             <br>
             <label for="">Senha</label>
-            <input type="password" placeholder="Digite sua Senha" name="senha" class="form-control" >
+            <input type="password" placeholder="Senha" name="senha" class="form-control" >
             <br>
             <input type="submit" class="btn btn-success">
 
